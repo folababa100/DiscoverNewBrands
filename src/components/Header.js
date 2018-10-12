@@ -1,11 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Modal, ModalHeader } from 'reactstrap';
+import { connect } from "react-redux";
+import { startGoogleLogin, startFacebookLogin } from "../actions/auth";
 
-export default class Header extends Component {
+export class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
+      modal: false,
       show: false
-    }
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+  onGoogleLogin() {
+    this.props.startGoogleLogin()
+  }
+  onFacebookLogin() {
+    this.props.startFacebookLogin()
   }
   render() {
     return (
@@ -33,32 +51,33 @@ export default class Header extends Component {
             </span>
                   ) : (
                       <span className="login-register bold">
-                        <p>Login</p>
+                        <p className="pointer" onClick={this.toggle}>Login</p>
                         |
-                  <p>Register</p>
+                  <p className="pointer">Register</p>
                       </span>
                     )}
                 </div>
               </div>
             </div>
-            <div class="modal" style={{ display: 'block' }} tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
+            <div>
+              {/* <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button> */}
+              <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                <ModalHeader style={{ borderBottom: '0' }} toggle={this.toggle}>
+                  <img className="img-logo" src="/images/discovernewbrands-logo.png" alt="Logo"/>
+                </ModalHeader>
+                <div style={{ maxWidth: '325px' }} className="container">
+                  <h3 className="text-center mb-4">Login to see more</h3>
+                  <input className="form-control radius-adjust mb-3" placeHolder="Email Address" type="text" />
+                  <input className="form-control radius-adjust" placeHolder="Password" type="password" />
+                  <button className="btn btn-danger radius-adjust btn-block mt-3">Log In</button>
+                  <h4 className="text-center mt-3">OR</h4>
+                  <button onClick={this.onFacebookLogin.bind(this)} className="btn btn-danger radius-adjust btn-block mt-3" style={{ backgroundColor: '#3b5998', border: '1px solid #3b5998' }}>SIGN IN WITH FACEBOOK</button>
+                  <button onClick={this.onGoogleLogin.bind(this)} className="btn btn-danger radius-adjust btn-block mt-3" style={{ backgroundColor: '#4285f4', border: '1px solid #4285f4' }}>SIGN IN WITH GOOGLE</button>
+                  <p className="text-center mt-3">Forgot my password</p>
+                  <hr/>
+                  <p className="text-center">Not a member yet | Sign Up</p>
                 </div>
-              </div>
+              </Modal>
             </div>
             <div className="row-adjusted" style={{ marginTop: '2rem' }}>
               <div className="line-left"></div>
@@ -144,3 +163,10 @@ export default class Header extends Component {
     )
   }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  startGoogleLogin: () => dispatch(startGoogleLogin()),
+  startFacebookLogin: () => dispatch(startFacebookLogin())
+})
+
+export default connect(undefined, mapDispatchToProps)(Header)
