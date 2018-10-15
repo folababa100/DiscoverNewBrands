@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
+// eslint-disable-next-line
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
+// eslint-disable-next-line
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 

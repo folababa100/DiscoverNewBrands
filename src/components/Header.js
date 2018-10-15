@@ -32,17 +32,17 @@ export class Header extends Component {
           <div className="fixed-nav mt-2">
             <div className="container-adjusted container mb-3" style={{ marginTop: '6px' }}>
               <div className="row">
-                <div className="col-md-3">
+                <div className="col-md-3" style={{ marginTop: '0.5rem' }}>
                   <fieldset className="d-none d-md-block d-lg-block searchbox">
                     <i className="ion-android-search"></i>
                     <input type="text" placeholder="Search ..." />
                   </fieldset>
                 </div>
 
-                <div className="col-md-6 col-10">
-
+                <div style={{ display: 'flex', justifyContent: 'center' }} className="col-md-6 col-sm-12">
+                  <img style={{ width: '62%', height: '3rem' }} src="/images/discovernewbrands-logo-adjust.png" alt="Brand Logo"/>
                 </div>
-                <div className="col-md-3 col-2 text-end">
+                <div className="d-none d-md-block col-md-3 col-2 text-end" style={{ marginTop: '0.5rem' }}>
 
                   {this.state.show === true ? (
                     <span className="bold">
@@ -51,9 +51,9 @@ export class Header extends Component {
             </span>
                   ) : (
                       <span className="login-register bold">
-                        <p className="pointer" onClick={this.toggle}>Login</p>
+                        <p className="a-style pointer" onClick={this.toggle}>Login</p>
                         |
-                  <p className="pointer">Register</p>
+                  <p onClick={this.toggle} className="a-style pointer">Register</p>
                       </span>
                     )}
                 </div>
@@ -63,7 +63,7 @@ export class Header extends Component {
               {/* <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button> */}
               <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                 <ModalHeader style={{ borderBottom: '0' }} toggle={this.toggle}>
-                  <img className="img-logo" src="/images/discovernewbrands-logo.png" alt="Logo"/>
+                  <img className="img-logo" src="/images/discovernewbrands-logo-adjust.png" alt="Logo"/>
                 </ModalHeader>
                 <div style={{ maxWidth: '325px' }} className="container">
                   <h3 className="text-center mb-4">Login to see more</h3>
@@ -89,7 +89,7 @@ export class Header extends Component {
                 <ul style={{ width: '100%' }}>
                   <div className="col-md-2-div col-3">
                     <li className="adjusted">
-                      <a className="a first" href="/">
+                      <a className="ab first" href="/">
                         <span>
                           <span className="ion-adjust">
                             <i className="ion-home ion-all"></i>
@@ -138,16 +138,16 @@ export class Header extends Component {
                   </div>
                   <div className="col-md-2-div-div col-3">
                     <li className="adjusted dropdown">
-                      <a className="a seventh" href="/">
+                      <a className="aa seventh" href="/">
                         <div className="dropdown">
                           <div className="dropdown-menu-adjusted">
-                            <a href="" className="dropdown-item">Lorem Ipsum</a>
-                            <a href="" className="dropdown-item">Lorem Ipsum</a>
-                            <a href="" className="dropdown-item">Lorem Ipsum</a>
-                            <a href="" className="dropdown-item">Lorem Ipsum</a>
-                            <a href="" className="dropdown-item">Lorem Ipsum</a>
-                            <a href="" className="dropdown-item">Lorem Ipsum</a>
-                            <a href="" className="dropdown-item">Lorem Ipsum</a>
+                            <a href="/" className="dropdown-item">Lorem Ipsum</a>
+                            <a href="/" className="dropdown-item">Lorem Ipsum</a>
+                            <a href="/" className="dropdown-item">Lorem Ipsum</a>
+                            <a href="/" className="dropdown-item">Lorem Ipsum</a>
+                            <a href="/" className="dropdown-item">Lorem Ipsum</a>
+                            <a href="/" className="dropdown-item">Lorem Ipsum</a>
+                            <a href="/" className="dropdown-item">Lorem Ipsum</a>
                           </div>
                         </div>
                       </a>

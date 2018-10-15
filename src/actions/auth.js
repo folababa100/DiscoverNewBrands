@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import { firebase, facebookAuthProvider, googleAuthProvider, emailAuthProvider } from '../firebase/firebase';
 
 export const login = (uid) => ({
@@ -19,6 +20,7 @@ export const startFacebookLogin = () => {
 
 export const startEmailLogin = () => {
   return () => {
+    
     
   }
 }
