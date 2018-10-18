@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { firebase } from '../firebase/firebase'
 
 class LoginPageAdmin extends Component {
   constructor(props) {
@@ -7,22 +8,20 @@ class LoginPageAdmin extends Component {
       data: []
     }
   }
-  signUpUser(e) {
+  signInUser(e) {
     e.preventDefault()
 
-    // const email = this.refs.email.value.trim();
-    // const password = this.refs.password.value.trim();
+    const email = this.refs.email.value.trim();
+    const password = this.refs.password.value.trim();
 
-    //   this.props.signUp({
-    //     email, password
-    //   }, function (error, res) {
-    //     if (error) {
-    //       console.error(error)
-    //     } else {
-    //       console.log(res);
-    //     }
-    //   });
-    this.props.history.push('/admin')
+    return firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((res) => {
+        console.log(res)
+        this.props.history.push('/admin')
+      })
+      .catch((e) => {
+        console.log(e)
+      })
   }
   render() {
     return (
@@ -33,7 +32,7 @@ class LoginPageAdmin extends Component {
               <div className="card card--adjust">
                 <div className="card-body text-center">
                   <h1 className="h1">Login Admin</h1>
-                  <form onSubmit={this.signUpUser.bind(this)}>
+                  <form onSubmit={this.signInUser.bind(this)}>
                     <div className="form-group">
                       <input ref="email" type="email" className="radius-none form-control" placeholder="Enter email" />
                     </div>

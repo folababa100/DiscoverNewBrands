@@ -7,6 +7,9 @@ import Footer from './Footer';
 import LoadingGif from './LoadingGif';
 
 class App extends Component {
+  componentDidMount() {
+    document.title = 'DiscoverNewBrands || Home'
+  }
   render() {
     return (
       <div>

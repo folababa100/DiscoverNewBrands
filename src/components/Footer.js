@@ -8,7 +8,7 @@ export default class Footer extends Component {
           <hr />
           <div className="row">
             <div className="col-3">
-              <h3>Hello</h3>
+              <h3 className="h3">Hello</h3>
               <p><a className="a-style" href="/">Gifts for men</a></p>
               <p><a className="a-style" href="/">Gifts for men</a></p>
               <p><a className="a-style" href="/">Gifts for men</a></p>
@@ -16,7 +16,7 @@ export default class Footer extends Component {
               <p><a className="a-style" href="/">Gifts for men</a></p>
             </div>
             <div className="col-3">
-              <h3>Hello</h3>
+              <h3 className="h3">Hello</h3>
               <p><a className="a-style" href="/">Gifts for men</a></p>
               <p><a className="a-style" href="/">Gifts for men</a></p>
               <p><a className="a-style" href="/">Gifts for men</a></p>
@@ -24,7 +24,7 @@ export default class Footer extends Component {
               <p><a className="a-style" href="/">Gifts for men</a></p>
             </div>
             <div className="col-3">
-              <h3>Hello</h3>
+              <h3 className="h3">Hello</h3>
               <p><a className="a-style" href="/">Gifts for men</a></p>
               <p><a className="a-style" href="/">Gifts for men</a></p>
               <p><a className="a-style" href="/">Gifts for men</a></p>
@@ -32,7 +32,7 @@ export default class Footer extends Component {
               <p><a className="a-style" href="/">Gifts for men</a></p>
             </div>
             <div className="col-3">
-              <h3>Hello</h3>
+              <h3 className="h3">Follow DiscoverNewBrands</h3>
               <p><a className="a-style" href="/">Gifts for men</a></p>
               <p><a className="a-style" href="/">Gifts for men</a></p>
               <p><a className="a-style" href="/">Gifts for men</a></p>

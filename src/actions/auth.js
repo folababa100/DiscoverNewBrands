@@ -18,13 +18,6 @@ export const startFacebookLogin = () => {
   }
 }
 
-export const startEmailLogin = () => {
-  return () => {
-    
-    
-  }
-}
-
 export const logout = () => ({
   type: 'LOGOUT'
 });

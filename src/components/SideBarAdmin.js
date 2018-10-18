@@ -2,8 +2,8 @@ import React from 'react';
 
 const SideBarAdmin = () => {
   return (
-    <div>
-      <div className="sidebar">
+    <div className="sidebar">
+      <div>
         
       </div>
     </div>
